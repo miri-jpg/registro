@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .class {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        .class h3 {
+            margin-top: 0;
+        }
+        .class p {
+            font-size: 14px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container input[type="date"], .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera de la página -->
+    <header>
+        <h1>Gimnasio en Línea</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+
+        <!-- Formulario de registro de miembro -->
+        <div class="form-container">
+            <h2>Registrar Nuevo Miembro</h2>
+            <form action="registro_miembro.php" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="text" name="telefono" placeholder="Teléfono" required>
+                <input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
+                <textarea name="direccion" placeholder="Dirección" required></textarea>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <!-- Listado de clases disponibles -->
+        <div class="class-list">
+            <h2>Clases Disponibles</h2>
+            <!-- Aquí se cargarán las clases desde la base de datos -->
+            <div class="class">
+                <h3>Clase de Yoga</h3>
+                <p>Instructor: Juan Pérez</p>
+                <p>Fecha y hora: 2024-11-10 10:00 AM</p>
+                <p>Duración: 60 minutos</p>
+                <p>Capacidad: 20 personas</p>
+                <a href="reservar_clase.php?clase_id=1" class="button">Reservar</a>
+            </div>
+            <div class="class">
+                <h3>Entrenamiento de Fuerza</h3>
+                <p>Instructor: Ana Gómez</p>
+                <p>Fecha y hora: 2024-11-11 9:00 AM</p>
+                <p>Duración: 45 minutos</p>
+                <p>Capacidad: 15 personas</p>
+                <a href="reservar_clase.php?clase_id=2" class="button">Reservar</a>
+            </div>
+            <!-- Las clases seguirían siendo cargadas dinámicamente -->
+        </div>
+        
+    </div>
+
+</body>
+</html>
